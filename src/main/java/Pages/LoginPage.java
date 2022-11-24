@@ -56,10 +56,13 @@ public class LoginPage extends PageBase{
 
         try {
             login.click();
+            driver.navigate().refresh();
             AssertThatUserLoginSucc = logo.isDisplayed();
         }
     catch(Exception exception) {
+        driver.navigate().refresh();
         fff = true;
+
 
     }
     }

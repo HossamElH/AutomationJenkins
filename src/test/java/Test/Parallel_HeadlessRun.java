@@ -6,8 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -15,46 +15,39 @@ import java.time.Duration;
 public class Parallel_HeadlessRun {
     LoginPage l ;
     // static WebDriver driver;
-    protected static ThreadLocal<ChromeDriver> driverr = new ThreadLocal<>();
+    public static ThreadLocal<ChromeDriver> driverr = new ThreadLocal<>();
 
-
-    @Test
-    public void HeadlessPosativeTest(){
-
-        l= new LoginPage(getDriver());
-
-    l.Cucum_Loginsuccessfully("Admin","admin123");
-    l.Cucum_clickonLogin();
-   Assert.assertTrue(l.AssertThatUserLoginSucc);
-
-
-    }
 
     @Test
     public void NegativeOne(){
-//        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-//        getDriver().get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-
         l= new LoginPage(getDriver());
-
         l.Cucum_Loginsuccessfully("Ain","admin123");
         l.Cucum_clickonLogin();
         Assert.assertTrue(l.fff);
 
 
     }
-    @BeforeTest
+    @Test
+    public void PosativeTest(){
+
+        l= new LoginPage(getDriver());
+
+        l.Cucum_Loginsuccessfully("Admin","admin123");
+        l.Cucum_clickonLogin();
+        Assert.assertTrue(l.AssertThatUserLoginSucc);
+    }
+
+
+    @BeforeMethod
     public void openBrowser()
     {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
 //        options.setHeadless(true);
         //options.addArguments("--headless");
-        options.setHeadless(true);
-        driverr.set(new ChromeDriver(options));
+        driverr.set(new ChromeDriver());
         getDriver().get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
         getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-        //getDriver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
     }
 
@@ -62,10 +55,11 @@ public class Parallel_HeadlessRun {
         return driverr.get();
     }
 
-        @AfterTest
+        @AfterMethod
     public void StopDriver()  {
 
             getDriver().quit();
+           driverr.remove();
 
     }
 
