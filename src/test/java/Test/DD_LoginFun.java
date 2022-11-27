@@ -2,7 +2,7 @@ package Test;
 
 import DataDriven.ReadLoginData;
 import Pages.LoginPage;
-import org.openqa.selenium.WindowType;
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -19,26 +19,30 @@ public class DD_LoginFun extends TestBase{
     LoginPage Logg ;
 
 
-    @Test(dataProvider = "DD_LoginSuccessfully")
-    public void happyTestCase (String user , String pass)  {
+
+//    @Test(dataProvider = "DD_LoginSuccessfully",priority = 1)
+//    public void happyTestCase (String user , String pass)  {
+//        Logg = new LoginPage(driver);
+//
+//        Logg.Loginsuccessfully(user, pass);
+//      Assert.assertTrue(Logg.AssertThatUserLoginSucc);
+//    }
+    @Test(dataProvider = "Invaliddd")
+    public void NegativeOne (String user , String pass)  {
         Logg = new LoginPage(driver);
-
-        Logg.Loginsuccessfully(user, pass);
-        if (Logg.AssertThatUserLoginSucc) {
-            Logg.SAVECookies(driver, user, pass);
-
-            String strUrl = driver.getCurrentUrl();
-
-            driver.switchTo().newWindow(WindowType.WINDOW);
-            driver.get(strUrl);
-
-
-        }
+        Logg.CantLoginsuccessfully(user, pass);
+        Assert.assertTrue(Logg.AssertThatUserLoginSucc);
     }
     @DataProvider
     public static Object[][] DD_LoginSuccessfully() throws IOException {
         ReadLoginData obj = new ReadLoginData();
         return obj.sheet() ;
+
+    }
+    @DataProvider
+    public static Object[][] Invaliddd() throws IOException {
+        ReadLoginData obj = new ReadLoginData();
+        return obj.sheett() ;
 
     }
 

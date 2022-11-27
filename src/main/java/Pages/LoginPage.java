@@ -26,6 +26,9 @@ public class LoginPage extends PageBase{
 @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div/div[1]/div/p")
  WebElement logo ;
 
+
+    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/p")
+    WebElement invalid_message ;
     WebDriverWait wait;
     WebElement btn;
 
@@ -42,6 +45,17 @@ public class LoginPage extends PageBase{
 
 
     }
+    public void  CantLoginsuccessfully(String userr , String pass)  {
+        username.sendKeys(userr);
+        password.sendKeys(pass);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        btn = wait.until(ExpectedConditions.elementToBeClickable(login));
+        btn.click();
+        AssertThatUserLoginSucc = invalid_message.isDisplayed();
+
+
+    }
+
     public void SAVECookies(WebDriver driver,String userrr,String passs){
         Cookie usernameCookie = new Cookie("username",userrr);
         Cookie passCookie = new Cookie("password",passs);

@@ -3,8 +3,8 @@ package Test;
 import Pages.BrokenLinkPage;
 import org.testng.annotations.Test;
 
-public class BrokenTest extends TestBase{
-    public BrokenTest(){
+public class Broken_Links_Master_Test extends TestBase{
+    public Broken_Links_Master_Test(){
         super("https://www.amazon.com/");
     }
     BrokenLinkPage l ;
@@ -13,4 +13,7 @@ public class BrokenTest extends TestBase{
         l = new BrokenLinkPage(driver);
         l.g("https://www.amazon.com/");
     }
+
+
+
 }
