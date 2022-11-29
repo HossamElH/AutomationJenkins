@@ -1,0 +1,17 @@
+Pages\Drag_Drop_Page.class
+Pages\AmazonJSPage.class
+Pages\PageBase.class
+Pages\UploadFilePage.class
+Pages\OpenNewWindowPage.class
+Pages\DateForCalendar3.class
+Pages\RecruitmentTabUsingKeyBoardPage.class
+Pages\InfiniteScroll.class
+Pages\ClickOnJavaScriptButtonPage.class
+Pages\RightClickPage.class
+Pages\TheSecondHighestPrice_PAge.class
+Pages\Datee.class
+Pages\OpenTabAndWindowPage.class
+Pages\BrokenLinkPage.class
+Pages\LocationPage.class
+Pages\LoginPage.class
+Pages\DoubleClickPage.class

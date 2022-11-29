@@ -1,0 +1,1 @@
+{"uuid":"af6156a0-9631-48f2-bba2-e10607cbc9a5","name":"TCoETraining","children":["194ebce1-75de-43d9-99ac-6c71e2fdd87b"],"befores":[{"name":"openBrowser","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1669726306260,"stop":1669726311701}],"afters":[],"start":1669726306248,"stop":1669726335724}

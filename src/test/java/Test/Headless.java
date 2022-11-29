@@ -26,16 +26,16 @@ public class Headless {
 
     }
 
-    @Test
-    public void NegativeOne(){
-        l= new LoginPage(driver);
-
-        l.Cucum_Loginsuccessfully("Ain","admin123");
-        l.Cucum_clickonLogin();
-        Assert.assertTrue(l.fff);
-
-
-    }
+//    @Test
+//    public void NegativeOne(){
+//        l= new LoginPage(driver);
+//
+//        l.Cucum_Loginsuccessfully("Ain","admin123");
+//        l.Cucum_clickonLogin();
+//        Assert.assertTrue(l.fff);
+//
+//
+//    }
     @BeforeTest
     public static void openBrowser()
     {

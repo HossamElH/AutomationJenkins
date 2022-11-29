@@ -2,13 +2,13 @@
 
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
-<suite name="Allure Repoert">
-    <test name="Default test" verbose="2">
+<suite name="Cmd Run">
+    <test name="run cmd" verbose="2">
 
 
         <classes>
 
-            <class name="Test.DD_LoginFun"/>
+            <class name="Test.Broken_Links_Master_Test"/>
 
         </classes>
 
