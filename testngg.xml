@@ -5,6 +5,8 @@
 <suite name="Cmd Run">
     <test name="run cmd" verbose="2">
 
+        
+        
 
         <classes>
 
